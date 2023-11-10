@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Lilita+One&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap');
+*{
+    padding:0;
+    margin:0;
+    font-family:poppins,sans-serif;
+    overflow:hidden;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width:100%;
+}
+#container{
+    height:550px;
+    width:70%;
+    background-color: #f2e7bf;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-around;
+}
+#wrapper{
+    width:100%;
+    height:300px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    border-radius: 15px;
+    color:#34504a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#bgimg{
+    height:300px;
+}
+#search{
+    position:relative;
+    top:80px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    color:#34504a;
+    height:150px;
+    width:300px;
+    z-index: 2;
+}
+#search h3{
+    font-size:40px;
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid #34504a;
+    width:65%;
+}
+#search button{
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #34504a;
+}
+#pronounce{
+    color:#dda3e1;
+}
+#sound{
+    background-color: #34504a;
+    position:absolute;
+    top:60px;
+    right:150px;
+    padding:15px;
+    border-radius: 50%;
+    border:1px solid #dde3e1;
+}
+h4{
+    padding:30px;
+    background-color: #f2e7bf;
+    width:60%;
+    border-radius: 10px;
+}
+p{
+    font-size:20px;
+}
+
+@media only screen and (max-width:768px){
+    #container{
+        width:100%;
+        height:100vh;
+    }
+    #sound{
+        right:50px;
+    }
+}
+@media only screen and (max-width:656px){
+    #container{
+        height:100%;
+        zoom:60%;
+    }
+    #search{
+       margin-top:50px;
+       align-self: flex-start;
+       margin-right:160px;
+    }
+    #wrapper{
+        height:65%;
+    }
+    #bgimg{
+        position:absolute;
+        height:400px;
+        top:30px;
+        right:-100px;
+    }
+    #wrapper h2{
+        font-size: 35px;
+    }
+    #pronounce{
+        font-size:25px;
+    }
+    #wrapper h4{
+        font-size:20px;
+    }
+    #sound{
+        top:100px;
+    }
+}
