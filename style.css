@@ -42,7 +42,7 @@
 }
 body{
     display: flex;
-    width:99%;
+    width:100%;
     min-height:100vh;
     justify-content: center;
     align-items: center;
@@ -68,7 +68,7 @@ body{
     border-radius:15px 15px 15px 15px;
 }
 #background{
-    width:22vh;
+    width:40%;
     align-self: flex-end;
     border-radius: 0px 0px 15px 0px;
 }
@@ -194,7 +194,7 @@ input{
 @media only screen and (max-width:768px){
     #container,#interface,#interface-container{
         width:100svw;
-        min-height: 100vh;
+        min-height: 100svh;
         border-radius: 0px;
     }
     #part1{
