@@ -5,24 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Dictionary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div id="container">
-        <div id="search">
-        <h3>Search Words</h3>
-        <div style="display:flex; justify-content: space-around;">
-        <input type="text" id="input">
-        <button>Search</button></div>
-        </div>
-        <img src="background.png" alt="banner image" id="bgimg">
-        <div id="wrapper">
-            <h2>&lt;&lt; Hello &gt;&gt;</h2>
-            <h3 id="pronounce">/həˈləʊ,hɛˈləʊ/</h3>
-            <img id="sound" src="sound.svg">
-            <h4> &bull; used as a greeting or to begin a phone conversation.</h4>
-            <p>Example: <i>Hello Lukas!!!</i> </p>
+    <div id="interface">
+        <div id="interface-container">
+            <h2>Dictionary</h2>
+            <img src="https://img.freepik.com/free-vector/dictionary-concept-illustration_114360-7489.jpg" alt="interface image">
+            <i>Let's Begin Your Word Hunt</i>
+            <button onclick="main()">Continue</button>
         </div>
     </div>
+ <div id="container">
+    <div id="part1">
+        <audio src="https://api.dictionaryapi.dev/media/pronunciations/en/welcome-uk.mp3" id="sound">
+            <source src="https://api.dictionaryapi.dev/media/pronunciations/en/welcome-uk.mp3" type="audio">
+        </audio>
+        <div id="searchbox">
+            <h2>Dictionary</h2>
+            <div id="search">
+                <input type="text" id="searchinput" placeholder="search words">
+                <button><i class="fa-solid fa-magnifying-glass" onclick="find()" id="searchbtn"></i></button>
+            </div>
+        </div>
+        <img src="background.png" alt="background"/ id="background">
+    </div>
+    <div id="part2">
+        <h2 id="heading" style="margin-top:20px;">&lt;&lt; Welcome &gt;&gt;</h2>
+        <div id="controls">
+            <i class="fa-solid fa-volume-low control" onclick="playSound()"></i>
+            <i class="fa-solid fa-heart control" id="like" onclick="likefunc()"></i>
+            <i class="fa-solid fa-circle-question control" id="show-credit"></i>
+        </div>
+        <h4 id="pronounce">/ˈwɛlkəm/</h4>
+        <h4 id="meaning">The act of greeting someone’s arrival, especially by saying "Welcome!"</h4>
+        <h4 id="example">Parts Of Speech: noun </h4>
+    </div>
+ </div>
+ <div id="credit" class="hide">
+    <h3><i class="fa-solid fa-xmark" id="x"></i> Source: <a href="https://dictionaryapi.dev/" target="_blank">Dictionaryapi.dev</a></h3>
+</div>
+
 </body>
 </html>
