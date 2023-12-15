@@ -55,7 +55,10 @@ async function find(){
         sound.src=data[0].phonetics[1].audio;
         else if(data[0].phonetics[2].audio.length>1)
         sound.src=data[0].phonetics[2].audio;
-        else console.error("Audio unavailable");
+        else{
+            sound.src="";
+            console.error("Audio unavailable");
+        }
         
     }
     catch (error) {
