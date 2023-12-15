@@ -9,7 +9,7 @@
     --txtcolor:#1e3533;
 }
 #interface{
-    height:100svh;
+    height:100vh;
     width:100%;
     display:flex;
     align-items: center;
@@ -50,7 +50,7 @@ body{
 #container{
     background-color: white;
     width: 70%;
-    height:100%;
+    min-height: 80vh;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     border-radius: 15px;
     display: none;
@@ -68,7 +68,7 @@ body{
     border-radius:15px 15px 15px 15px;
 }
 #background{
-    width:40%;
+    width:20%;
     align-self: flex-end;
     border-radius: 0px 0px 15px 0px;
 }
@@ -193,8 +193,8 @@ input{
 }
 @media only screen and (max-width:768px){
     #container,#interface,#interface-container{
-        width:100svw;
-        min-height: 100svh;
+        min-width:100%;
+        min-height: 100vh;
         border-radius: 0px;
     }
     #part1{
@@ -208,6 +208,9 @@ input{
     #part2{
         flex-grow: 0;
         margin:0;
+    }
+    #background{
+        width:40%;
     }
 }
 @media only screen and (max-width:418px){
