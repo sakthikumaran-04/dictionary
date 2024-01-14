@@ -46,20 +46,33 @@ async function find(){
             console.log(element);
         });
         heading.innerHTML=`&lt;&lt; ${input} &gt;&gt;`;
-        pronounce.innerHTML=data[0].phonetic;
+        let phonetics_len=data[0].phonetics.length;
+        for(let i=0;i<phonetics_len;i++){
+            if(data[0].phonetics[i].hasOwnProperty("text")){
+                if(data[0].phonetics[i].text.length>1){
+                pronounce.innerHTML=data[0].phonetics[i].text;
+                break;
+                }
+            }
+                else{
+                    pronounce.innerHTML="Unavailable";
+                    console.log("Pronounce Unavailable");
+                }
+        }
         meaning.innerHTML=data[0].meanings[0].definitions[0].definition;
         example.innerHTML="Parts Of Speech: "+data[0].meanings[0].partOfSpeech;
-        if(data[0].phonetics[0].audio.length>1)
-        sound.src=data[0].phonetics[0].audio;
-        else if(data[0].phonetics[1].audio.length>1)
-        sound.src=data[0].phonetics[1].audio;
-        else if(data[0].phonetics[2].audio.length>1)
-        sound.src=data[0].phonetics[2].audio;
-        else{
-            sound.src="";
-            console.error("Audio unavailable");
-        }
-        
+        let flag=false;
+        for(let i=0;i<phonetics_len;i++){
+            if(data[0].phonetics[i].audio.length>1){
+            sound.src=data[0].phonetics[i].audio;
+            flag=true;
+            break;
+            }
+        }  
+            if(!flag){        
+            sound.src="unavailable.mp3";
+            console.log("Audio Unavailable");
+            }
     }
     catch (error) {
         console.error('Error:', error);
